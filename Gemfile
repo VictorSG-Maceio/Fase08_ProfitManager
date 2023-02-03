@@ -55,3 +55,5 @@ gem "ransack", "~> 3.2"
 
 gem "devise_token_auth", "~> 1.2"
 gem "omniauth", "~> 2.1"
+
+gem "rack-cors", "~> 1.1"
