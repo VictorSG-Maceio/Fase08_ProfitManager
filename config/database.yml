@@ -85,6 +85,6 @@ test:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  # database: ProfitManager_production
-  # username: ProfitManager
-  # password: <%= ENV["PROFITMANAGER_DATABASE_PASSWORD"] %>
+  database: ProfitManager_production
+  username: ProfitManager
+  password: <%= ENV["PROFITMANAGER_DATABASE_PASSWORD"] %>
