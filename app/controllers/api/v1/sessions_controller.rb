@@ -1,14 +1,15 @@
 class Api::V1::SessionsController < Api::V1::BaseController
     def create
-        user = User.find_by(email: session_params[:email])
+        user = User.find_by(email: sessions_params[:email])
 
-        if user && user.valid_password?(session_params[:password])
+        if user && user.valid_password?(sessions_params[:password])
+            # store: false faz com que o devise não crie uma sessão
             sign_in user, store: false
             user.generate_authentication_token!
             user.save
             render json: user, status: 200
         else
-            render json: { errors: "E-mail ou senha inválidos"}, status: 401
+            render json: { errors: 'E-mail ou Senha inválidos' }, status: 401
         end
     end
 
@@ -18,9 +19,4 @@ class Api::V1::SessionsController < Api::V1::BaseController
         user.save
         render json: {}, status: 204
     end
-
-    private
-        def session_params
-            params.require(:session).permit(:email, :password)
-        end
 end

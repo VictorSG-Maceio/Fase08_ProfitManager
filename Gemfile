@@ -39,8 +39,8 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "faker"
   gem "rspec-rails"
+  gem "faker"
 end
 
 group :development do
@@ -48,12 +48,12 @@ group :development do
   # gem "spring"
 end
 
-gem 'devise'
+gem "devise"
 
-gem 'active_model_serializers', '~> 0.10.0'
-gem "ransack", "~> 3.2"
+gem "active_model_serializers", "~> 0.10.0"
 
-gem "devise_token_auth", "~> 1.2"
-gem "omniauth", "~> 2.1"
+gem "omniauth"
 
-gem "rack-cors", "~> 1.1"
+gem "devise_token_auth"
+
+gem "rack-cors"

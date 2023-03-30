@@ -26,13 +26,13 @@ default: &default
 
 development:
   <<: *default
-  database: ProfitManager_development
+  database: ProfitManager_tests_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: ProfitManager
+  #username: ProfitManager_tests
 
   # The password associated with the postgres role (username).
   #password:
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ProfitManager_test
+  database: ProfitManager_tests_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,6 +85,6 @@ test:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  database: ProfitManager_production
-  username: ProfitManager
-  password: <%= ENV["PROFITMANAGER_DATABASE_PASSWORD"] %>
+  database: ProfitManager_tests_production
+  username: ProfitManager_tests
+  password: <%= ENV["PROFITMANAGER_TESTS_DATABASE_PASSWORD"] %>
