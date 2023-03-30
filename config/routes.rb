@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     end
     namespace :v2 do
       mount_devise_token_auth_for 'User', at: 'auth'
-      resources :users
-      resources :sessions
       resources :gains
       resources :expenses
     end
